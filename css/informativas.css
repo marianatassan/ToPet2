@@ -1,0 +1,121 @@
+body {
+	margin: 0 auto;
+}
+
+.cabeca {
+	display: table;
+	width: 100%;
+}
+
+.cabeca h1 {
+	display: inline-block;
+	font-size: 40px;
+	margin-left: 1em;
+	vertical-align: middle;
+}
+
+.cabeca img {
+	display: inline-block;
+	margin-left: 1em;
+	width: 60px;
+	vertical-align: middle;
+}
+
+.cabeca ul{
+	display: table;
+	float: right;
+	margin-top:auto;
+	margin-bottom:auto;
+	list-style: none;
+}
+
+.cabeca ul li {
+	display: table-cell;
+	padding: 3em 1em 0em 1em;
+}
+
+.cabeca ul li a {
+	color: #000000;
+	text-decoration: none;
+	font-size: 16px;
+}
+
+.cabeca ul li a:hover {
+    border-bottom: 2px solid #EA0000;
+}
+
+.menu {
+	margin-left:auto; 
+	margin-right:auto;
+	width: 50%;
+}
+
+.menu ul {
+    padding:0px;
+    margin:0px;
+    background-color:#EFF383;
+    list-style:none;
+}
+
+.menu ul li { display: inline; }
+
+.menu ul li a {
+    padding: 10px 53.4px;
+    display: inline-block;
+
+    /* visual do link */
+    background-color:#EFF383;
+    color: #333;
+    text-decoration: none;
+    border-bottom:3px solid #EFF383;
+}
+
+.menu ul li a:hover {
+    background-color:#D8DC4D;
+    color: #6D6D6D;
+    border-bottom:3px solid #EA0000;
+}
+
+.conteudo {
+	margin-left:auto; 
+	margin-right:auto;
+	width: 50%;
+}
+
+.conteudo img {
+	width: 650px;
+	height: 300px;
+	display: block;
+	margin-left: auto;
+    margin-right: auto;
+	margin-top: 30px;
+}
+
+.conteudo p {
+	font-size: 18px;
+	text-align: justify;
+}
+
+#higiene img{
+	margin-right: 10px;
+	width: 325px;
+	float: left;
+}
+
+#alimentacao img{
+	margin-right: 10px;
+	width: 325px;
+	float: left;	
+}
+
+#atividade img{
+	margin-right: 10px;
+	width: 325px;
+	float: left;	
+}
+
+#saude img{
+	margin-right: 10px;
+	width: 325px;
+	float: left;	
+}

@@ -1,0 +1,136 @@
+body {
+	margin: 0 auto;
+}
+
+.cabeca {
+	display: table;
+	width: 100%;
+}
+
+.cabeca h1 {
+	display: inline-block;
+	font-size: 40px;
+	margin-left: 1em;
+	vertical-align: middle;
+}
+
+.cabeca img {
+	display: inline-block;
+	margin-left: 1em;
+	width: 60px;
+	vertical-align: middle;
+}
+
+.cabeca ul{
+	display: table;
+	float: right;
+	margin-top:auto;
+	margin-bottom:auto;
+	list-style: none;
+}
+
+.cabeca ul li {
+	display: table-cell;
+	padding: 3em 1em 0em 1em;
+}
+
+.cabeca ul li a {
+	color: #000000;
+	text-decoration: none;
+	font-size: 16px;
+}
+
+.cabeca ul li a:hover {
+    border-bottom:2px solid #EA0000;
+}
+
+.botoes-fotos-animais p {
+	font-size: 20px;
+	text-align: center;
+}
+
+.botoes-fotos-animais ul1 {
+	display: table;
+	list-style: none;
+	margin-left:auto; 
+	margin-right:auto;
+}
+
+.botoes-fotos-animais ul1 li {
+	display: table-cell;
+	padding: 0 0em 0 1em;
+}
+
+.botoes-fotos-animais ul1 li a img{
+	display: table-cell;
+	width: 200px;
+	height: 180px;
+	border: 3px solid #000000;
+}
+
+.botoes-fotos-animais ul1 li a img:hover {
+	border: 3px solid #4CAF50;
+	border-radius: 20%;
+}
+
+.botoes-fotos-animais ul2 {
+	display: table;
+	list-style: none;
+	margin-left:auto; 
+	margin-right:auto;
+}
+
+.botoes-fotos-animais ul2 li {
+	display: table-cell;
+	padding: 0 0em 0 1em;
+}
+
+.botoes-fotos-animais ul2 li a img{
+	display: table-cell;
+	width: 200px;
+	height: 180px;
+	border: 3px solid #000000;
+}
+
+.botoes-fotos-animais ul2 li a img:hover {
+	border: 3px solid #4CAF50;
+	border-radius: 20%;
+}
+
+.texto {
+	margin-left:auto; 
+	margin-right:auto;
+	width: 50%;
+}
+
+
+.texto p {
+	font-size: 18px;
+	text-align: justify;
+}
+
+.texto h1 {
+	font-size: 25px;
+	text-align: center;
+}
+
+.texto img {
+	width: 200px;
+	height: 150px;
+	display: block;
+	margin-left: auto;
+    margin-right: auto;
+}
+
+.redes_sociais {
+	position: absolute;
+	bottom: 0;
+	left: 45%;
+}
+
+.redes_sociais a img {
+	width: 32px;
+	height: 23px;
+	padding: 10px 10px;
+}
+
