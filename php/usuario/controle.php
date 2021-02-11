@@ -1,7 +1,7 @@
 <?php
-require_once "usuario/credencial.php";
-require_once "usuario/sessao.php";
-require_once "usuario/mysql.php";
+require_once "../usuario/credencial.php";
+require_once "../usuario/sessao.php";
+require_once "../usuario/funcoes_usuario.php";
 
 class ControleUsuario {
 	private $persistencia;

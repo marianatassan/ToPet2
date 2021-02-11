@@ -1,5 +1,5 @@
 <?php
-require_once "usuario/credencial.php";
+require_once "../usuario/credencial.php";
 
 class Sessao {
 	private $credencial;
