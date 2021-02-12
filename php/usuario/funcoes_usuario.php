@@ -32,6 +32,12 @@ class Mysql implements PersisteCredencial {
 		$result = $this->mysqlconnection->query($query);
 	}
 
+	function alteraLoginUsuario() {
+		$query = "UPDATE usuarios SET login='Rodolfo' WHERE id=18";
+		$result = $this->mysqlconnection->query($query);
+		return $result;
+	}
+
 	function carregaUsuarios() {
 		$query = "SELECT * FROM usuarios";
 		$result = $this->mysqlconnection->query($query);

@@ -14,11 +14,22 @@ var_dump($persistenciaPostagem);
 $result = $persistenciaPostagem->criaTabelaPostagem();
 var_dump($result);
 
-$result = $persistenciaPostagem->inserePostagem('aa','bb','cc','dd','ee',1);
+/*$dados = criaDadosInsercao('dia bonito blablabla','cachorro','100','jpeg', 15);
+$result = $persistenciaPostagem->inserePostagem($dados);
 var_dump($result);
 
+$dados = criaDadosInsercao('Hoje o tico tomou banho e fez tosa higiênica','Dia de spa','50','jpeg', 15);
+$result = $persistenciaPostagem->inserePostagem($dados);
+var_dump($result);
 
-$result = $persistenciaPostagem->carregaPostagem();
+$dados = criaDadosInsercao('Primeira vez que o Toby passeia!! Ele ficou assustado no início mas depois foi se acostumando','Toby passeando','100','jpeg', 18);
+$result = $persistenciaPostagem->inserePostagem($dados);
+var_dump($result);*/
+
+$result = $persistenciaPostagem->carregaUsuarioPostagem();
+var_dump($result);
+
+$result = $persistenciaPostagem->alteraTipoPostagem();
 var_dump($result);
 
 /*$result = $persistenciaPostagem->deletaPostagem();
@@ -40,6 +51,9 @@ $result = $persistenciaUsuario->insereUsuario('adm','eu');
 var_dump($result);
 
 $result = $persistenciaUsuario->insereUsuario('voce','456');
+var_dump($result);
+
+$result = $persistenciaUsuario->alteraLoginUsuario();
 var_dump($result);
 
 $result = $persistenciaUsuario->carregaUsuario();
