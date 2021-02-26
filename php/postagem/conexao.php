@@ -1,9 +1,12 @@
 <?php
+
 function getConexao() {
     $hostname = 'localhost';
-    $database = 'topet_banco';
-    $username = 'root';
-    $password = '';
-    return mysqli_connect("$hostname", "$username", "$password", "$database");
+    $database = 'bd_topet';
+    $username = 'postgres';
+    $password = 'mariana';
+    $connstring = "host=$hostname dbname=$database user=$username password=$password";
+    return pg_connect($connstring);
 }
+
 ?>

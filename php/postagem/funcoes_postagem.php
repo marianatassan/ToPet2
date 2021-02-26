@@ -7,55 +7,48 @@ class funcoes_postagem implements PersistePostagem {
     function __construct() {
         $this->persistencia = getConexao();
     }
-	function criaTabelaPostagem() {
-		$query = "CREATE TABLE IF NOT EXISTS publicacao (
-		id_postagem INT NOT NULL AUTO_INCREMENT,
-		legenda VARCHAR(600) NOT NULL,
-		titulo VARCHAR(45) NOT NULL,
-		tamanho_imagem VARCHAR(45) NOT NULL,
-		tipo_imagem VARCHAR(45) NOT NULL,
-		usuarios_postagem INT NOT NULL,
-		FOREIGN KEY (usuarios_postagem) REFERENCES usuarios(id),
-		PRIMARY KEY (id_postagem))";
-		$result = mysqli_query($this->persistencia, $query);
+
+	function criaTabelaPostagem() { //postgre
+		$query = "CREATE TABLE IF NOT EXISTS postagens (
+			titulo VARCHAR(128) NOT NULL,
+			legenda VARCHAR(600) NOT NULL,
+			img TEXT NOT NULL,
+			id_postagem serial not null PRIMARY KEY,
+			usuid INT NOT NULL,
+			FOREIGN KEY (usuid) REFERENCES usuarios(id)
+		)";
+		$result = pg_query($this->persistencia, $query);
 		return $result;
 
 	}
 
-	function inserePostagem($dados) {
-		$legenda = $dados['legenda'];
-        $titulo_imagem = $dados['titulo_imagem'];
-        $tamanho_imagem = $dados['tamanho_imagem'];
-        $tipo_imagem = $dados['tipo_imagem'];
-        $usuarios_postagem = $dados['usuarios_postagem'];
+	/*private function getUsuarioId() {
+        $query = "SELECT id FROM usuarios WHERE login='$_SESSION['login']' LIMIT 1";
+        $result = pg_query($this->persistencia, $query);
+        $usuid = NULL;
+        if ($result && pg_num_rows($result) > 0) {
+            $usuid = pg_fetch_array($result, NULL, MYSQLI_ASSOC)['id'];
+        }
+        return $usuid;
+    }
 
-		$query = "INSERT INTO publicacao(legenda, titulo, tamanho_imagem, tipo_imagem,usuarios_postagem) VALUES('$legenda','$titulo_imagem','$tamanho_imagem','$tipo_imagem', $usuarios_postagem)";
+	function inserePostagem($dados) { //postgre
+		$usuid = $this->getUsuarioId();
+        $result = NULL;
+		if ($usuid) {
+			$titulo = $dados['titulo'];
+			$legenda = $dados['legenda'];
+			$img = $dados['img'];
+			//$usuid = $dados['usuid'];
 
-		$result = mysqli_query($this->persistencia, $query);
-
+			$query = "INSERT INTO postagens(titulo, legenda, img, usuid) VALUES('$titulo','$legenda','$img', $usuid)";
+			$result = pg_query($this->persistencia, $query);
+		}
 		return $result;
 	}
-
-	function alteraTipoPostagem() {
-		$query = "UPDATE publicacao SET tipo_imagem='png' WHERE id_postagem>=2";
-		$result = mysqli_query($this->persistencia, $query);
-		return $result;
-	}
-
-	function carregaUsuarioPostagem() {
-		$query = "SELECT usuarios_postagem FROM publicacao WHERE id_postagem=2";
-		$result = mysqli_query($this->persistencia, $query);
-		return $result;
-	}
-
-	function deletaTabelaPostagem() {
-		$query = "DROP TABLE publicacao";
-		$result = mysqli_query($this->persistencia, $query);
-		return $result;
-	}
-
-	function deletaPostagem() {
-		$query = "DELETE FROM publicacao WHERE id_postagem>5;";
+	*/
+	function carregaPostagens() {
+		$query = "SELECT * FROM postagens";
 		$result = mysqli_query($this->persistencia, $query);
 		return $result;
 	}
